@@ -1,22 +1,29 @@
 import React from 'react';
-import RatingCard from './components/RatingCard';
+import UserReview from './UserReviewCard-components/UserReviewCard';
+import RatingSystem from './Rating-system-components/RatingSystem';
 import {users} from './users'
 import './style.scss';
+import { useSelector } from 'react-redux';
 
-function App() {
+
+const App: React.FC = ()=> {
+  const reviewedStars = useSelector((state: any)=>state.rating.stars)
+  
   return (
     <div className='container'>
       {users.map(({userID, img, reviewMessage, stars, username})=>{
+        
         return (
-          <RatingCard
+          <UserReview
           key={userID} 
-          stars={stars}
+          stars={reviewedStars}
           review={reviewMessage}
           img={img}
           username={username}
           />
         )
       })}
+      <RatingSystem/>
     </div>
   );
 }

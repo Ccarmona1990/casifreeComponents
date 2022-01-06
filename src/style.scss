@@ -20,3 +20,24 @@
 .rounded-5{
   border-radius: 0.8rem;
 }
+
+.rating-button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.on {
+  color: orange;
+}
+.off {
+  color: #ccc;
+}
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display:block;
+    width : 100px; /* this could be defined on any parent */
+}
